@@ -15,7 +15,7 @@ def patient(request):
                 post.patient_email= request.POST.get('patient_email')
                 #post.patient_appointment= request.POST.get('patient_appointment')
                 post.save() 
-                return render(request, 'patient.html')
+                return render(request, 'success.html')
         else:
             return render(request,'patient.html')
 def success(request):
