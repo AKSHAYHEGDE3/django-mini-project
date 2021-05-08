@@ -13,7 +13,7 @@ def patient(request):
                 post.patient_name= request.POST.get('patient_name')
                 post.patient_mobile_no= request.POST.get('patient_mobile_no')
                 post.patient_email= request.POST.get('patient_email')
-                #post.patient_appointment= request.POST.get('patient_appointment')
+                post.patient_appointment= request.POST.get('patient_appointment')
                 post.save() 
                 return render(request, 'success.html')
         else:
@@ -21,8 +21,7 @@ def patient(request):
 def success(request):
     return render(request,'success.html')
 
-
-            
+ 
                  
 
        
