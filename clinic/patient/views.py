@@ -7,6 +7,9 @@ from .models import Patient
 
 def patient(request):
         if request.method == 'POST':
+             pt_data = request.POST.dict()
+             naam=pt_data.get('patient_name')
+             par={'name': naam}
              if request.POST.get('patient_name') and request.POST.get('patient_mobile_no') and request.POST.get('patient_email') :
                 post=Patient()
                 post.patient_name= request.POST.get('patient_name')
@@ -14,8 +17,8 @@ def patient(request):
                 post.patient_email= request.POST.get('patient_email')
                 post.patient_appointment= request.POST.get('patient_appointment')
                 post.save()
-                 
-                return render(request, 'success.html')
+               
+                return render(request, 'success.html',par)
         else:
             return render(request,'patient.html')
 def success(request):
