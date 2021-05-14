@@ -13,15 +13,14 @@ def patient(request):
                 post.patient_mobile_no= request.POST.get('patient_mobile_no')
                 post.patient_email= request.POST.get('patient_email')
                 post.patient_appointment= request.POST.get('patient_appointment')
-                post.save() 
+                post.save()
+                 
                 return render(request, 'success.html')
         else:
             return render(request,'patient.html')
 def success(request):
     return render(request,'success.html')
 
-x=Patient.objects.all()
-print(x)
 
 
        
