@@ -8,8 +8,11 @@ from .models import Patient
 def patient(request):
         if request.method == 'POST':
              pt_data = request.POST.dict()
-             naam=pt_data.get('patient_name')
-             par={'name': naam}
+             par={'name': pt_data.get('patient_name'),
+                  'mobile_no':pt_data.get('patient_mobile_no'),
+                  'email_id':pt_data.get('patient_email'),
+                  'appointment_date':pt_data.get('patient_appointment'),
+                  }
              if request.POST.get('patient_name') and request.POST.get('patient_mobile_no') and request.POST.get('patient_email') :
                 post=Patient()
                 post.patient_name= request.POST.get('patient_name')
