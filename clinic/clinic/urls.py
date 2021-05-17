@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.index,name='index'),
     path('patient/', include('patient.urls')),
     path('success/', include('patient.urls')),
+    path('doctor/', include('doctor.urls')),
     
 ]
