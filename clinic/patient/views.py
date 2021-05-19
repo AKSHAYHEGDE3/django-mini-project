@@ -15,6 +15,7 @@ def patient(request):
                   }
              if request.POST.get('patient_name') and request.POST.get('patient_mobile_no') and request.POST.get('patient_email') :
                 post=Patient()
+                post.patient_id= request.POST.get('patient_id')
                 post.patient_name= request.POST.get('patient_name')
                 post.patient_mobile_no= request.POST.get('patient_mobile_no')
                 post.patient_email= request.POST.get('patient_email')
