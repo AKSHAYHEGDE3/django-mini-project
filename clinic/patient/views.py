@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Patient
 # Create your views here.
@@ -23,6 +23,7 @@ def patient(request):
                 post.save()
                
                 return render(request, 'success.html',par)
+                
         else:
             return render(request,'patient.html')
 def success(request):
